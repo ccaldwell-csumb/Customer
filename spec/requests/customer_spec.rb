@@ -134,7 +134,7 @@ RSpec.describe 'Customers', type: :request do
 
         # retrieve customer
         email = @email
-        get '/customers/:email', params: { email: email }
+        get '/customers', params: { email: email }
 
         # expect status code 200
         expect(response.status).to eq(200)
@@ -159,7 +159,7 @@ RSpec.describe 'Customers', type: :request do
 
       it "returns 404 for customer not found" do
         # retrieve non-existant customer
-        get '/customers/:email', params: { email: 'steve@mail.com' }
+        get '/customers', params: { email: 'steve@mail.com' }
 
         #expect status code 404 not found
         expect(@response.status).to eq(404)
@@ -185,7 +185,7 @@ RSpec.describe 'Customers', type: :request do
 
       # retrieve customer
       id = @customer.id
-      get "/customers/#{id}"
+      get "/customers?id=#{id}"
 
       # expect status code 200
       expect(response.status).to eq(200)
@@ -206,7 +206,7 @@ RSpec.describe 'Customers', type: :request do
 
     it "returns 404 for customer not found" do
       # retrieve non-existant customer
-      get '/customers/545454'
+      get "/customers?id=12564"
 
       #expect status code 404 not found
       expect(@response.status).to eq(404)
