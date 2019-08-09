@@ -10,35 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_182903) do
+ActiveRecord::Schema.define(version: 20190719182903) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email"
     t.string "firstName"
     t.string "lastName"
-    t.float "lastOrder"
-    t.float "lastOrder2"
-    t.float "lastOrder3"
-    t.float "award"
+    t.float  "lastOrder"
+    t.float  "lastOrder2"
+    t.float  "lastOrder3"
+    t.float  "award"
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "description"
-    t.float "price"
-    t.integer "stockQty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.float    "price"
+    t.integer  "stockQty"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "itemId"
-    t.string "description"
-    t.integer "customerId"
-    t.float "price"
-    t.float "award"
-    t.float "total"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "itemId"
+    t.string   "description"
+    t.integer  "customerId"
+    t.float    "price"
+    t.float    "award"
+    t.float    "total"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
